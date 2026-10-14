@@ -1,0 +1,19 @@
+name: Continuous Integration
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  check-python:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Check Python file
+        run: test -f studentdata.py
+
+      - name: Run Python program
+        run: python3 studentdata.py
